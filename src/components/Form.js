@@ -24,11 +24,10 @@ export default function Form() {
                 style={pickerSelectStyles}
                 onValueChange={(value) => console.log(value)}
                 items={[
-                    {label: 'Footbool', value: 'futbol'},
-                    {label: 'Footbool', value: 'futbol'},
-                    {label: 'Footbool', value: 'futbol'},
-                    {label: 'Footbool', value: 'futbol'},
-                    {label: 'Footbool', value: 'futbol'}
+                    {label: '3 meses', value: 3},
+                    {label: '6 meses', value: 6},
+                    {label: '12 meses', value: 12},
+                    {label: '24 meses', value: 24},
                 ]}
             />
         </View>
