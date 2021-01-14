@@ -1,25 +1,36 @@
-import React from "react";
-import {StyleSheet, View, Text, SafeAreaView, StatusBar, YellowBox} from "react-native";
+import React, {useState} from "react";
+import {StyleSheet, View, Text, SafeAreaView, StatusBar, Button} from "react-native";
 import colors from "./src/utils/colors";
 import Form from "./src/components/Form";
-
-YellowBox.ignoreWarnings(['Picker has been extracted']);
+import Footer from "./src/components/Footer";
 
 export default function App() {
+    const [capital, setCapital] = useState(null);
+    const [interest, setInterest] = useState(null);
+    const [months, setMonths] = useState(null);
+
+    const calculate = () => {
+        console.log("capital->", capital);
+        console.log("interest->", interest);
+        console.log("months->", months);
+    };
+
     return (
         <>
             <StatusBar barStyle="light-content"/>
             <SafeAreaView style={styles.safeArea}>
                 <View style={styles.background}/>
                 <Text style={styles.titleApp}>Cotizador de prestamos</Text>
-                <Form/>
+                <Form
+                    setCapital={setCapital}
+                    setInterest={setInterest}
+                    setMonths={setMonths}
+                />
             </SafeAreaView>
             <View>
                 <Text>Resultado</Text>
             </View>
-            <View>
-                <Text>Footer</Text>
-            </View>
+            <Footer calculate={calculate}/>
         </>
     )
 }
