@@ -1,6 +1,6 @@
 React-native-P1-appPrestamos
 
-![Screen shoot](https://drive.google.com/file/d/1zVD9L4yqOyxXI-pJRFvuT5QgXhUF0MRh/view?usp=sharing)
+![Screen shoot](https://uc4610189427ef411747b2e93efa.previews.dropboxusercontent.com/p/thumb/ABFUpEvBwMIwhIpf0KV1S9TtLY9L_NdA_SAWN_9WDkgkR_njMBtdxTTe8oFgB8VER-QIb_gSocZCDi6Smb42aYs_e5pc8Mv1yUDItoJg1hWNHy8q6vpLk6_aVmx_kPHDAnZNKlaDT4WDZrBrb8Q8qrYJ8k3uTM8obEJgzFI8CmJ6JwzernpKo8TEVUNUrIkSCURfCLnmGTXUm3J_HuYHoNKMoWJX4IFir8CkZqh1ahErnnE4uUq0IXeRY-qrjF1x5a2BUri68ds55DMMjxeNisHwvQpCyRm0aMkFpy0eM3B6WUw3K1XD014UW3CViOhfQJJ7HcGYuFEWCtZ5WEDwoVWnkcDarDhF-CGlwGn9G6krDxrmF1SROXmLK_BLaihUGg8hoDVo7BRz1g4svW3tc6XN/p.png?fv_content=true&size_mode=5)
 
 **Run project**
 
