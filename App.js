@@ -1,22 +1,30 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import {StyleSheet, View, Text, SafeAreaView, StatusBar, Button} from "react-native";
 import colors from "./src/utils/colors";
 import Form from "./src/components/Form";
 import Footer from "./src/components/Footer";
+import ResultCalculation from "./src/components/ResultCalculation";
 
 export default function App() {
     const [capital, setCapital] = useState(null);
     const [interest, setInterest] = useState(null);
     const [months, setMonths] = useState(null);
     const [total, setTotal] = useState(null);
+    const [errorMessage, setErrorMessage] = useState(null);
+
+    useEffect(() => {
+        if (capital && interest && months) calculate();
+        else reset();
+    }, [capital, interest, months]);
 
     const calculate = () => {
+        reset();
         if (!capital) {
-            console.log('añade la cantidad');
+            setErrorMessage('añade la cantidad que deseas solicitar');
         } else if (!interest) {
-            console.log('añade el interes del prestamo');
+            setErrorMessage('Añade el interes del prestamo');
         } else if (!months) {
-            console.log('añade el interes del prestamo');
+            setErrorMessage('Selecciona los meses a pagar');
         } else {
             const i = interest / 100;
             const fee = capital / ((1 - Math.pow(i + 1, -months)) / i);
@@ -26,7 +34,11 @@ export default function App() {
                 totalPayable: (fee * months).toFixed(2).replace('.', ',')
             })
         }
+    };
 
+    const reset = () => {
+        setErrorMessage('');
+        setTotal(null);
     };
 
     return (
@@ -41,9 +53,12 @@ export default function App() {
                     setMonths={setMonths}
                 />
             </SafeAreaView>
-            <View>
-                <Text>Resultado</Text>
-            </View>
+            <ResultCalculation
+                capital={capital}
+                interest={interest}
+                months={months}
+                total={total}
+                errorMessage={errorMessage}/>
             <Footer calculate={calculate}/>
         </>
     )
